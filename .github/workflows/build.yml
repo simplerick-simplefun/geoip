@@ -106,8 +106,10 @@ jobs:
           git checkout -b release
           git add -A
           git commit -m "${{ env.RELEASE_NAME }}"
-          git remote add geoip "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
-          git push -f -u geoip release
+          git remote add myrepo "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          git tag "${{ env.TAG_NAME }}"
+          git push myrepo "${{ env.TAG_NAME }}"
+          git push -f -u myrepo release
 
       - name: Purge jsdelivr CDN
         run: |
