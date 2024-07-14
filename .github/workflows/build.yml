@@ -102,7 +102,7 @@ jobs:
           cd publish || exit 1
           git init
           git config --local user.name "github-actions[bot]"
-          git config --local user.email "891708+soffchen@users.noreply.github.com"
+          git config --local user.email "13503950+simplerick-simplefun@users.noreply.github.com"
           git checkout -b release
           git add -A
           git commit -m "${{ env.RELEASE_NAME }}"
